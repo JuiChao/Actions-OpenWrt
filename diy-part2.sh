@@ -15,3 +15,4 @@ sed -i 's/192.168.1.1/192.168.123.1/g' package/base-files/files/bin/config_gener
 
 # Modify default heme
 sed -i 's/luci-theme-bootstrap/luci-theme-material/g' feeds/luci/collections/luci/Makefile
+sed -i 's/the default bootstrap theme/the default Material theme/g' feeds/luci/collections/luci/Makefile
