@@ -5,13 +5,21 @@ CONFIG_BATMAN_ADV_BATMAN_V=y
 CONFIG_BATMAN_ADV_BLA=y
 CONFIG_BATMAN_ADV_DAT=y
 CONFIG_BATMAN_ADV_MCAST=y
+CONFIG_GNUTLS_ALPN=y
+CONFIG_GNUTLS_ANON=y
+CONFIG_GNUTLS_DTLS_SRTP=y
+CONFIG_GNUTLS_HEARTBEAT=y
+CONFIG_GNUTLS_OCSP=y
+CONFIG_GNUTLS_PSK=y
 CONFIG_PACKAGE_6in4=y
-CONFIG_PACKAGE_SAMBA_MAX_DEBUG_LEVEL=-1
+CONFIG_PACKAGE_attr=y
 CONFIG_PACKAGE_automount=y
 CONFIG_PACKAGE_autosamba=y
+CONFIG_PACKAGE_avahi-dbus-daemon=y
 CONFIG_PACKAGE_batctl-default=y
 CONFIG_PACKAGE_coreutils-nohup=y
 CONFIG_PACKAGE_dawn=y
+CONFIG_PACKAGE_dbus=y
 CONFIG_PACKAGE_dnsforwarder=y
 CONFIG_PACKAGE_dnsproxy=y
 CONFIG_PACKAGE_hd-idle=y
@@ -46,13 +54,30 @@ CONFIG_PACKAGE_kmod-scsi-core=y
 CONFIG_PACKAGE_kmod-sit=y
 CONFIG_PACKAGE_kmod-usb-storage=y
 CONFIG_PACKAGE_kmod-usb-storage-extras=y
+CONFIG_PACKAGE_libatomic=y
+CONFIG_PACKAGE_libattr=y
+CONFIG_PACKAGE_libavahi-client=y
+CONFIG_PACKAGE_libavahi-dbus-support=y
 CONFIG_PACKAGE_libblkid=y
 CONFIG_PACKAGE_libcap=y
+CONFIG_PACKAGE_libdaemon=y
+CONFIG_PACKAGE_libdbus=y
+CONFIG_PACKAGE_libexpat=y
 CONFIG_PACKAGE_libgcrypt=y
+CONFIG_PACKAGE_libgmp=y
+CONFIG_PACKAGE_libgnutls=y
 CONFIG_PACKAGE_libgpg-error=y
+# CONFIG_PACKAGE_libmbedtls is not set
 CONFIG_PACKAGE_libminiupnpc=y
 CONFIG_PACKAGE_libnatpmp=y
+CONFIG_PACKAGE_libncurses=y
+CONFIG_PACKAGE_libnettle=y
+CONFIG_PACKAGE_libpopt=y
+CONFIG_PACKAGE_libreadline=y
 CONFIG_PACKAGE_libstdcpp=y
+CONFIG_PACKAGE_libtasn1=y
+CONFIG_PACKAGE_libtirpc=y
+CONFIG_PACKAGE_liburing=y
 CONFIG_PACKAGE_libuv=y
 CONFIG_PACKAGE_libwebsockets-full=y
 # CONFIG_PACKAGE_luci-app-diskman_INCLUDE_lsblk is not set
@@ -66,11 +91,14 @@ CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_IPv6_Nat=y
 # CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Simple_Obfs is not set
 # CONFIG_PACKAGE_luci-app-rclone_INCLUDE_rclone-ng is not set
 # CONFIG_PACKAGE_luci-app-rclone_INCLUDE_rclone-webui is not set
-CONFIG_PACKAGE_luci-app-samba=y
+CONFIG_PACKAGE_luci-app-samba4=y
 CONFIG_PACKAGE_luci-app-sqm=y
 CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Hysteria=y
 # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_NONE_V2RAY is not set
 # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Libev_Client is not set
+# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Libev_Client is not set
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_NONE_Client=y
+# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Simple_Obfs is not set
 CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Xray=y
 CONFIG_PACKAGE_luci-app-ttyd=y
 CONFIG_PACKAGE_luci-app-turboacc_INCLUDE_DNSFORWARDER=y
@@ -80,7 +108,7 @@ CONFIG_PACKAGE_luci-compat=y
 CONFIG_PACKAGE_luci-i18n-easymesh-zh-cn=y
 CONFIG_PACKAGE_luci-i18n-hd-idle-zh-cn=y
 CONFIG_PACKAGE_luci-i18n-passwall2-zh-cn=y
-CONFIG_PACKAGE_luci-i18n-samba-zh-cn=y
+CONFIG_PACKAGE_luci-i18n-samba4-zh-cn=y
 CONFIG_PACKAGE_luci-i18n-sqm-zh-cn=y
 CONFIG_PACKAGE_luci-i18n-ttyd-zh-cn=y
 CONFIG_PACKAGE_luci-i18n-zerotier-zh-cn=y
@@ -90,11 +118,16 @@ CONFIG_PACKAGE_odhcp6c=y
 CONFIG_PACKAGE_odhcp6c_ext_cer_id=0
 CONFIG_PACKAGE_odhcpd-ipv6only=y
 CONFIG_PACKAGE_odhcpd_ipv6only_ext_cer_id=0
-CONFIG_PACKAGE_samba36-server=y
+CONFIG_PACKAGE_samba4-libs=y
+CONFIG_PACKAGE_samba4-server=y
+# CONFIG_PACKAGE_shadowsocks-libev-ss-local is not set
+# CONFIG_PACKAGE_shadowsocks-libev-ss-redir is not set
 # CONFIG_PACKAGE_shadowsocksr-libev-ssr-local is not set
 # CONFIG_PACKAGE_shadowsocksr-libev-ssr-redir is not set
+# CONFIG_PACKAGE_simple-obfs-client is not set
 CONFIG_PACKAGE_sqm-scripts=y
 CONFIG_PACKAGE_tc-tiny=y
+CONFIG_PACKAGE_terminfo=y
 CONFIG_PACKAGE_ttyd=y
 CONFIG_PACKAGE_umdns=y
 CONFIG_PACKAGE_unzip=y
@@ -105,4 +138,8 @@ CONFIG_PACKAGE_wpad-openssl=y
 CONFIG_PACKAGE_wsdd2=y
 CONFIG_PACKAGE_xray-core=y
 CONFIG_PACKAGE_zerotier=y
+CONFIG_SAMBA4_SERVER_AVAHI=y
+CONFIG_SAMBA4_SERVER_NETBIOS=y
+CONFIG_SAMBA4_SERVER_VFS=y
+CONFIG_SAMBA4_SERVER_WSDD2=y
 CONFIG_WPA_MSG_MIN_PRIORITY=3
