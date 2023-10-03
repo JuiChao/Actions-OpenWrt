@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build OpenWrt 360t7-imwrt
+name: Build imwrt 360t7
 
 on:
   repository_dispatch:
