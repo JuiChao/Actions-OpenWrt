@@ -18,5 +18,5 @@ sed -i 's/luci-theme-bootstrap/luci-theme-material/g' feeds/luci/collections/luc
 sed -i 's/the default Bootstrap theme/the default Material theme/g' feeds/luci/collections/luci/Makefile
 
 # Modify KERNEL version
-sed -i 's/KERNEL_PATCHVER:=5.4/KERNEL_PATCHVER:=5.10/g' target/linux/ramips/Makefile
+#sed -i 's/KERNEL_PATCHVER:=5.4/KERNEL_PATCHVER:=5.10/g' target/linux/ramips/Makefile
 sed -i 's/KERNEL_PATCHVER:=6.1/KERNEL_PATCHVER:=5.15/g' target/linux/mediatek/Makefile
