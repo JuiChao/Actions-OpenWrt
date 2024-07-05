@@ -1,7 +1,6 @@
 CONFIG_TARGET_mediatek=y
 CONFIG_TARGET_mediatek_filogic=y
 CONFIG_TARGET_mediatek_filogic_DEVICE_qihoo_360t7=y
-# CONFIG_FSTOOLS_UBIFS_EXTROOT is not set
 CONFIG_PACKAGE_6in4=y
 CONFIG_PACKAGE_chinadns-ng=y
 CONFIG_PACKAGE_coreutils=y
