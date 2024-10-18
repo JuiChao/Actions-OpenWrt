@@ -14,10 +14,11 @@
 sed -i 's/192.168.1.1/192.168.123.1/g' package/base-files/files/bin/config_generate
 
 # Modify default theme
-sed -i 's/luci-theme-bootstrap/luci-theme-material/g' feeds/luci/collections/luci-ssl-nginx/Makefile
-sed -i 's/luci-theme-bootstrap/luci-theme-material/g' feeds/luci/collections/luci-nginx/Makefile
 sed -i 's/luci-theme-bootstrap/luci-theme-material/g' feeds/luci/collections/luci-light/Makefile
+sed -i 's/luci-theme-bootstrap/luci-theme-material/g' feeds/luci/collections/luci-nginx/Makefile
+sed -i 's/luci-theme-bootstrap/luci-theme-material/g' feeds/luci/collections/luci-ssl-nginx/Makefile
 sed -i 's/the default Bootstrap theme/the default Material theme/g' feeds/luci/collections/luci-light/Makefile
+sed -i 's/the default Bootstrap theme/the default Material theme/g' feeds/luci/collections/luci-nginx/Makefile
 
 # Modify KERNEL version
 sed -i 's/KERNEL_PATCHVER:=5.4/KERNEL_PATCHVER:=5.10/g' target/linux/ramips/Makefile
