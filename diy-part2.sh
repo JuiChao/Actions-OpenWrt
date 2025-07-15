@@ -26,5 +26,5 @@ sed -i 's/the default Bootstrap theme/the default Material theme/g' feeds/luci/c
 sed -i 's/KERNEL_PATCHVER:=5.4/KERNEL_PATCHVER:=5.10/g' target/linux/ramips/Makefile
 #sed -i 's/KERNEL_PATCHVER:=6.1/KERNEL_PATCHVER:=5.15/g' target/linux/mediatek/Makefile
 #sed -i 's/DEPENDS:=@!LINUX_5_15/DEPENDS:=@!LINUX_6_1/g' package/utils/fitblk/Makefile
-sed -i 's/KERNEL_PATCHVER:=6.1/KERNEL_PATCHVER:=6.6/g' target/linux/mediatek/Makefile
-sed -i 's/DEPENDS:=@!LINUX_5_15/DEPENDS:=@!LINUX_6_6/g' package/utils/fitblk/Makefile
+sed -i 's/KERNEL_PATCHVER:=6.6/KERNEL_PATCHVER:=6.12/g' target/linux/mediatek/Makefile
+sed -i 's/DEPENDS:=@!LINUX_5_15/DEPENDS:=@!LINUX_6_12/g' package/utils/fitblk/Makefile
