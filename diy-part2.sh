@@ -28,5 +28,3 @@ sed -i 's/KERNEL_PATCHVER:=5.4/KERNEL_PATCHVER:=5.10/g' target/linux/ramips/Make
 #sed -i 's/DEPENDS:=@!LINUX_5_15/DEPENDS:=@!LINUX_6_1/g' package/utils/fitblk/Makefile
 sed -i 's/KERNEL_PATCHVER:=6.6/KERNEL_PATCHVER:=6.12/g' target/linux/mediatek/Makefile
 sed -i 's/DEPENDS:=@!LINUX_5_15/DEPENDS:=@!LINUX_6_12/g' package/utils/fitblk/Makefile
-sed -i 's/1.12.0/1.12.3/g' feeds/packages/net/sing-box/Makefile
-sed -i 's/1093254161d2dac2175a589eb0b43415b89b3e0c10bb2a09ac230f320d974c82/f59b1253ae0143997cb46915af30d14a33431dcbd7e39edacfcde8d73050faaf/g' feeds/packages/net/sing-box/Makefile
