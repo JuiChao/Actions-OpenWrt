@@ -21,4 +21,4 @@ echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;main' >
 
 # Modify a feed source
 sed -i '2s/\#//g' feeds.conf.default
-sed -i '3d' feeds.conf.default
+sed -i -e '3d' -e '7d' feeds.conf.default
