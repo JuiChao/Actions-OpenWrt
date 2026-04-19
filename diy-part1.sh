@@ -21,4 +21,4 @@
 
 # Modify a feed source
 sed -i '2s/\#//g' feeds.conf.default #删除第2行的#
-sed -i -e '5d' feeds.conf.default #删除第5行
+sed -i -e '3d' -e '4d' -e '5d' feeds.conf.default #删除第3、4、5行
