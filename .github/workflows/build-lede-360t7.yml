@@ -88,6 +88,9 @@ jobs:
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
+    - name: Delete somefeeds
+      run: cd openwrt && rm -rf ./feeds/luci/applications/luci-app-passwall
+
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
 
