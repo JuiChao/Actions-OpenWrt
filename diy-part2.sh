@@ -13,6 +13,10 @@
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.123.1/g' package/base-files/files/bin/config_generate
 
+# Delete somefeeds
+rm -rf ./openwrt/feeds/luci/applications/luci-app-passwall 
+rm -rf ./openwrt/feeds/luci/applications/luci-app-passwall2
+
 # Modify default theme
 #sed -i 's/luci-theme-bootstrap/luci-theme-material/g' feeds/luci/collections/luci/Makefile
 #sed -i 's/the default Bootstrap theme/the default Material theme/g' feeds/luci/collections/luci/Makefile
