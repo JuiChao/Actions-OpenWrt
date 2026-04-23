@@ -20,5 +20,5 @@ echo 'src-git passwall_luci https://github.com/Openwrt-Passwall/openwrt-passwall
 echo 'src-git passwall2 https://github.com/Openwrt-Passwall/openwrt-passwall2.git;main' >>feeds.conf.default
 
 # Modify a feed source
-sed -i '2s/\#//g' feeds.conf.default #删除第2行的#
-sed -i -e '3d' -e '4d' -e '5d' feeds.conf.default #删除第3、4、5行
+#sed -i '2s/\#//g' feeds.conf.default #删除第2行的#
+#sed -i -e '3d' -e '4d' -e '5d' feeds.conf.default #删除第3、4、5行
