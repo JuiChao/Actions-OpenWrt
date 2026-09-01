@@ -24,4 +24,4 @@ sed -i '1i\src-git passwall_packages https://github.com/Openwrt-Passwall/openwrt
 # Modify a feed source
 #sed -i '2s/\#//g' feeds.conf.default #删除第2行的#
 #sed -i -e '3d' -e '4d' -e '5d' feeds.conf.default #删除第3、4、5行
-sed -i '8s/^/#/' feeds.conf.default #第8行行首添加字符“#”
+sed -i '10s/^/#/' feeds.conf.default #第8行行首添加字符“#”
