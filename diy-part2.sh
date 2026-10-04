@@ -17,6 +17,11 @@ sed -i 's/192.168.1.1/192.168.123.1/g' package/base-files/files/bin/config_gener
 # rm -rf ./openwrt/feeds/luci/applications/luci-app-passwall 
 # rm -rf ./openwrt/feeds/luci/applications/luci-app-passwall2
 
+# 修改 package/kernel/mt76/Makefile 启用 360T7 MTK 无线硬件加速
+if ! grep -q "wed_enable=Y" package/kernel/mt76/Makefile; then
+    sed -i '/AutoProbe,mt7915e/a\  ifdef CONFIG_TARGET_mediatek_filogic\n    MODPARAMS.mt7915e:=wed_enable=Y\n  endif' package/kernel/mt76/Makefile
+fi
+
 # Modify default theme
 #sed -i 's/luci-theme-bootstrap/luci-theme-material/g' feeds/luci/collections/luci/Makefile
 #sed -i 's/the default Bootstrap theme/the default Material theme/g' feeds/luci/collections/luci/Makefile
