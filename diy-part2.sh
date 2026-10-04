@@ -22,6 +22,12 @@ if ! grep -q "wed_enable=Y" package/kernel/mt76/Makefile; then
     sed -i '/AutoProbe,mt7915e/a\  ifdef CONFIG_TARGET_mediatek_filogic\n    MODPARAMS.mt7915e:=wed_enable=Y\n  endif' package/kernel/mt76/Makefile
 fi
 
+# 修正 PassWall uci-defaults 对 fw3 的误判（仅在未适配 fw4 时修补）
+pw_defaults="feeds/passwall_luci/luci-app-passwall/root/etc/uci-defaults/luci-app-passwall"
+if [ -f "$pw_defaults" ] && ! grep -q "/sbin/fw4" "$pw_defaults"; then
+    sed -i 's/\[ -x "\/sbin\/fw3" \]/\[ -x "\/sbin\/fw3" \] \&\& \[ ! -x "\/sbin\/fw4" \]/g' "$pw_defaults"
+fi
+
 # Modify default theme
 #sed -i 's/luci-theme-bootstrap/luci-theme-material/g' feeds/luci/collections/luci/Makefile
 #sed -i 's/the default Bootstrap theme/the default Material theme/g' feeds/luci/collections/luci/Makefile
