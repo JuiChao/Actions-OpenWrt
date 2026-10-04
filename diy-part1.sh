@@ -18,12 +18,13 @@
 #echo 'src-git passwall_packages https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git;main' >>feeds.conf.default
 #echo 'src-git passwall_luci https://github.com/Openwrt-Passwall/openwrt-passwall.git;main' >>feeds.conf.default
 #echo 'src-git passwall2 https://github.com/Openwrt-Passwall/openwrt-passwall2.git;main' >>feeds.conf.default
+
 # 文档顶部(第一行前)插入feed source
 sed -i '1i\src-git passwall_packages https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git;main\nsrc-git passwall_luci https://github.com/Openwrt-Passwall/openwrt-passwall.git;main' feeds.conf.default
+
+#第10行行首添加字符“#”
+sed -i '10s/^/#/' feeds.conf.default
 
 # Modify a feed source
 #sed -i '2s/\#//g' feeds.conf.default #删除第2行的#
 #sed -i -e '3d' -e '4d' -e '5d' feeds.conf.default #删除第3、4、5行
-
-#第10行行首添加字符“#”
-sed -i '10s/^/#/' feeds.conf.default
