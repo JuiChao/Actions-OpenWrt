@@ -26,7 +26,3 @@ fi
 
 # 注释 helloworld 源（按名称精准匹配，执行多次不叠加）
 sed -i --follow-symlinks 's/^src-git helloworld/#src-git helloworld/' feeds.conf.default
-
-# Modify a feed source
-#sed -i '2s/\#//g' feeds.conf.default #删除第2行的#
-#sed -i -e '3d' -e '4d' -e '5d' feeds.conf.default #删除第3、4、5行
