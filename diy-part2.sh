@@ -32,5 +32,5 @@ fi
 #sed -i 's/luci-theme-bootstrap/luci-theme-material/g' feeds/luci/collections/luci/Makefile
 
 # Modify KERNEL version
-#sed -i 's/KERNEL_PATCHVER:=6.6/KERNEL_PATCHVER:=6.12/g' target/linux/mediatek/Makefile
+sed -i 's/KERNEL_PATCHVER:=6.12/KERNEL_PATCHVER:=6.18/g' target/linux/mediatek/Makefile
 #sed -i 's/DEPENDS:=@!LINUX_5_15/DEPENDS:=@!LINUX_6_12/g' package/utils/fitblk/Makefile
