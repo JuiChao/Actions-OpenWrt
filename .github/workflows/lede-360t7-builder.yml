@@ -19,7 +19,7 @@ on:
         required: false
         default: 'false'
   schedule:
-    - cron: 51 18 * * *
+    - cron: 21 18 * * *
 
 permissions:
   contents: write
