@@ -33,3 +33,14 @@ fi
 
 # Modify KERNEL version
 #sed -i 's/KERNEL_PATCHVER:=6.12/KERNEL_PATCHVER:=6.18/g' target/linux/mediatek/Makefile
+
+# 激活 Ccache 编译缓存以加速后续二次编译（具备严格幂等性与安全性）
+if [ -f .config ]; then
+    sed -i '/CONFIG_DEVEL=/d; /CONFIG_DEVEL is not set/d' .config
+    sed -i '/CONFIG_CCACHE=/d; /CONFIG_CCACHE is not set/d' .config
+    echo "CONFIG_DEVEL=y" >> .config
+    echo "CONFIG_CCACHE=y" >> .config
+    # 限制 Ccache 缓存上限为 5GB，适配 GitHub Actions 10GB 配额
+    mkdir -p .ccache
+    [ -f .ccache/ccache.conf ] || echo "max_size = 5.0G" > .ccache/ccache.conf
+fi
