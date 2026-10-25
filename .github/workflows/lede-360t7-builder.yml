@@ -34,7 +34,7 @@ env:
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
-  UPLOAD_RELEASE: false
+  UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
 
 jobs:
@@ -171,7 +171,15 @@ jobs:
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
         echo "release_tag=$(date +"%Y.%m.%d-%H%M")" >> $GITHUB_OUTPUT
-        touch release.txt
+        cat << 'EOF' > release.txt
+        ### 360T7 OpenWrt 固件发布说明
+
+        * 🔗 **管理地址**: `192.168.123.1`
+        * 🔑 **默认密码**: `password`
+        * 📦 **适配设备**: 奇虎 360T7 (MediaTek MT7981B / Filogic 820)
+        * ⚡ **核心加速**: MTK 无线硬件加速 (WED / mt7915e) 已启用
+        * 🚀 **内置插件**: PassWall, Sing-box, Xray-core, Hysteria, GeoView, Argon 现代化主题
+        EOF
         echo "status=success" >> $GITHUB_OUTPUT
 
     - name: Upload firmware to release
