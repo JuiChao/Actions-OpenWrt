@@ -119,8 +119,8 @@ jobs:
         cd openwrt
         make defconfig
         make download -j8
-        find dl -size -1024c -exec ls -l {} \;
-        find dl -size -1024c -exec rm -f {} \;
+        find dl -maxdepth 1 -type f -size -1024c -exec ls -l {} \;
+        find dl -maxdepth 1 -type f -size -1024c -exec rm -f {} +
 
     - name: Compile the firmware
       id: compile
@@ -190,6 +190,7 @@ jobs:
       with:
         name: OpenWrt_build_log${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: openwrt/.config
+        include-hidden-files: true
 
     - name: Delete workflow runs
       uses: Mattraks/delete-workflow-runs@v2.1.0
