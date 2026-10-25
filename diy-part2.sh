@@ -48,4 +48,8 @@ if [ -f .config ]; then
     if [ ! -x staging_dir/host/bin/ccache ] && [ -x /usr/bin/ccache ]; then
         ln -sf /usr/bin/ccache staging_dir/host/bin/ccache
     fi
+    # 固化 Go 编译缓存路径以加速 PassWall 生态组件编译（具备幂等性）
+    sed -i '/CONFIG_GOLANG_BUILD_CACHE_DIR=/d' .config
+    echo 'CONFIG_GOLANG_BUILD_CACHE_DIR="/workdir/openwrt/.gocache"' >> .config
+    mkdir -p .gocache
 fi
