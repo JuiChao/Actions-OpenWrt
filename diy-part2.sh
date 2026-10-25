@@ -43,4 +43,9 @@ if [ -f .config ]; then
     # 限制 Ccache 缓存上限为 5GB，适配 GitHub Actions 10GB 配额
     mkdir -p .ccache
     [ -f .ccache/ccache.conf ] || echo "max_size = 5.0G" > .ccache/ccache.conf
+    # 确保 staging_dir/host/bin/ccache 可执行，防止复用 Toolchain 缓存时缺少 ccache 导致 CMake 包编译失败
+    mkdir -p staging_dir/host/bin
+    if [ ! -x staging_dir/host/bin/ccache ] && [ -x /usr/bin/ccache ]; then
+        ln -sf /usr/bin/ccache staging_dir/host/bin/ccache
+    fi
 fi

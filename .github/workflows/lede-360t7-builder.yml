@@ -72,7 +72,7 @@ jobs:
       uses: klever1988/cachewrtbuild@main
       with:
         ccache: 'true'
-        mixkey: 'mediatek'
+        mixkey: '360t7'
         prefix: ${{ github.workspace }}/openwrt
 
     - name: Load custom feeds
@@ -179,9 +179,7 @@ jobs:
       if: failure()
       with:
         name: OpenWrt_build_log${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
-        path: |
-          openwrt/logs
-          openwrt/.config
+        path: openwrt/.config
 
     - name: Delete workflow runs
       uses: Mattraks/delete-workflow-runs@v2.1.0
