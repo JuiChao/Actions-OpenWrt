@@ -168,7 +168,7 @@ jobs:
 
     - name: Generate release tag
       id: tag
-      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
+      if: steps.organize.outputs.status == 'success' && env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
         echo "release_tag=$(date +"%Y.%m.%d-%H%M")" >> $GITHUB_OUTPUT
         cat << 'EOF' > release.txt
@@ -207,10 +207,10 @@ jobs:
         keep_minimum_runs: 6
 
     - name: Remove old Releases
-      uses: dev-drprasad/delete-older-releases@v0.3.4
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
-      with:
-        keep_latest: 3
-        delete_tags: true
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        gh release list --limit 100 --exclude-drafts --json tagName -q '.[3:][].tagName' | while read -r tag; do
+          [ -n "$tag" ] && gh release delete "$tag" --cleanup-tag --yes
+        done
