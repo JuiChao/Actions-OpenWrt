@@ -211,6 +211,6 @@ jobs:
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        gh release list --limit 100 --exclude-drafts --json tagName -q '.[3:][].tagName' | while read -r tag; do
+        gh release list --limit 100 --exclude-drafts --json tagName -q '.[5:][].tagName' | while read -r tag; do
           [ -n "$tag" ] && gh release delete "$tag" --cleanup-tag --yes
         done
