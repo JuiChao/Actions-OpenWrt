@@ -28,13 +28,6 @@ if [ -f "$pw_defaults" ] && ! grep -q "/sbin/fw4" "$pw_defaults"; then
     sed -i 's/\[ -x "\/sbin\/fw3" \]/\[ -x "\/sbin\/fw3" \] \&\& \[ ! -x "\/sbin\/fw4" \]/g' "$pw_defaults"
 fi
 
-# 修复 Linux 6.12.114 内核下 mac80211 访问 netns_local 的编译报错（适配 netns_immutable）
-#for p in package/kernel/mac80211/patches/build/210-wireless_netns_local_backport.patch package/kernel/mac80211/patchs/build/160-add-kernel-6.12-support.patch; do
-#    if [ -f "$p" ]; then
-#        sed -i 's/netns_local/netns_immutable/g' "$p"
-#    fi
-#done
-
 # Modify default theme
 #sed -i 's/luci-theme-bootstrap/luci-theme-material/g' feeds/luci/collections/luci/Makefile
 
