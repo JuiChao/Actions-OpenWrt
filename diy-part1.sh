@@ -26,3 +26,6 @@ fi
 
 # 注释 helloworld 源（按名称精准匹配，执行多次不叠加）
 sed -i --follow-symlinks 's/^src-git helloworld/#src-git helloworld/' feeds.conf.default
+
+# 注释 video 源（360T7 无图形显示需求，消除 mesa/drm 刷屏警告并加速 feeds 更新，按名称精准匹配且幂等）
+sed -i --follow-symlinks 's/^src-git video/#src-git video/' feeds.conf.default

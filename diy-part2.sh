@@ -34,6 +34,11 @@ fi
 # Modify KERNEL version
 #sed -i 's/KERNEL_PATCHVER:=6.12/KERNEL_PATCHVER:=6.18/g' target/linux/mediatek/Makefile
 
+# 补全 tools/elfutils 对 tools/bison 的编译依赖，修复多核并行编译抢跑报错（具备严格幂等性）
+if [ -f tools/Makefile ] && ! grep -q "elfutils/compile.*bison/compile" tools/Makefile; then
+    sed -i '/elfutils\/compile :=/s#:= #:= $(curdir)/bison/compile #' tools/Makefile
+fi
+
 # 激活 Ccache 编译缓存以加速后续二次编译（具备严格幂等性与安全性）
 if [ -f .config ]; then
     sed -i '/CONFIG_DEVEL=/d; /CONFIG_DEVEL is not set/d' .config
